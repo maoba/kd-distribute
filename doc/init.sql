@@ -46,15 +46,6 @@ CREATE TABLE `kd_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100101 DEFAULT CHARSET=utf8mb4 COMMENT='产品表';
 
-
-DROP TABLE IF EXISTS `distribute_lock`;
-CREATE TABLE `distribute_lock` (
-  `id` int(11) NOT NULL,
-  `business_code` varchar(255) NOT NULL,
-  `business_name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 -- ----------------------------
 -- Records of product
 -- ----------------------------
