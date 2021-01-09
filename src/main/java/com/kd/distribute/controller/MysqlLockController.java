@@ -2,6 +2,7 @@ package com.kd.distribute.controller;
 
 import com.kd.distribute.service.MySQLOrderService;
 import com.kd.distribute.service.RedisLockService;
+import com.kd.distribute.service.RedissonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,9 @@ public class MysqlLockController {
     @Autowired
     private RedisLockService redisLockService;
 
+    @Autowired
+    private RedissonService redissonService;
+
 
     @RequestMapping(value = "/mysqlLock/createOrder")
     public String createOrder() throws Exception {
@@ -33,6 +37,12 @@ public class MysqlLockController {
     @RequestMapping(value = "/redisLock/redisLockCreateOrder")
     public String redisLockCreateOrder() throws Exception {
         redisLockService.createOrder();
+        return "success";
+    }
+
+    @RequestMapping(value = "/redisLock/redissonCreateOrder")
+    public String redissonCreateOrder() throws Exception {
+        redissonService.createOrder();
         return "success";
     }
 }
